@@ -1,6 +1,6 @@
 import React from 'react'
 import CommentSection from '../CommentSection/CommentSection'
-
+import PropTypes from 'prop-types'
 
 
 function PostContainer(props) {
@@ -9,8 +9,6 @@ function PostContainer(props) {
         <div>
             {props.postData.map((post) => {
               return(  
-                  
-                
                 <CommentSection
                  post = {post}
                  />
@@ -21,6 +19,8 @@ function PostContainer(props) {
     )
 }
 
-
+PostContainer.propTypes = {
+    postData: PropTypes.array.isRequired
+}
 
 export default PostContainer

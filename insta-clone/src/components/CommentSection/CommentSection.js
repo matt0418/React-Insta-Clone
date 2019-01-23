@@ -1,6 +1,7 @@
 import React from 'react'
 import Comment from './Comment'
 import './CommentSection.css'
+import PropTypes from 'prop-types'
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -79,7 +80,6 @@ class CommentSection extends React.Component {
                     onChange = {this.changeHandler}
                     name = "comment"
                     value = {this.state.comment}
-                    
                     >
                     
                     </input>
@@ -89,5 +89,18 @@ class CommentSection extends React.Component {
     )
     }  
 }
+
+CommentSection.propTypes = {
+    post: PropTypes.shape({
+        comments: PropTypes.array,
+        imageUrl: PropTypes.string,
+        likes: PropTypes.number,
+        thumbnailUrl: PropTypes.string,
+        timestamp: PropTypes.string,
+        username: PropTypes.string
+
+    })
+}
+
 
 export default CommentSection
