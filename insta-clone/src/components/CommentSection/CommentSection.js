@@ -21,8 +21,10 @@ class CommentSection extends React.Component {
         const comments = this.state.comments.slice()
         comments.push(newComment)
         this.setState({
-            comments
+            comments,
+            comment: ''
         })
+
     }
 
     increaseLike = () => {
@@ -45,6 +47,7 @@ class CommentSection extends React.Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+        
     }
     
 
@@ -68,6 +71,19 @@ class CommentSection extends React.Component {
             </div>
             <strong><p>{this.props.post.likes}</p></strong>
             <Comment comments = {this.state.comments}/>
+            <p>{this.props.post.timestamp}</p>
+            <form onSubmit = {this.addNewComment}>
+                    <input 
+                    type="text"
+                    placeholder="Add a new comment..."
+                    onChange = {this.changeHandler}
+                    name = "comment"
+                    value = {this.state.comment}
+                    
+                    >
+                    
+                    </input>
+            </form>
         </div>
 
     )
