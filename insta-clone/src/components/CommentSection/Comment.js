@@ -1,5 +1,6 @@
 import React from 'react'
 import './Comment.css'
+import PropTypes from 'prop-types'
 
 function Comment(props) {
     return(
@@ -12,6 +13,13 @@ function Comment(props) {
             })}
         </div>
     )
+}
+
+Comment.propTypes = {
+    comments: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string.isRequired,
+        username: PropTypes.string.isRequired
+    }))
 }
 
 export default Comment
