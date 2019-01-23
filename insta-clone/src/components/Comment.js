@@ -3,7 +3,7 @@ import './Comment.css'
 
 function Comment(props) {
     return(
-        <div>
+        <div className = "comments">
             {props.comments.map((comment, ind)=> {
                 return (<div key = {ind}>
                     <strong><p>{comment.username}</p></strong>
