@@ -1,14 +1,20 @@
 import React from 'react'
 import './Comment.css'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+
+const CommentP = styled.p`
+    margin-left: 10px;
+`
+
 
 function Comment(props) {
     return(
         <div className = "comments">
             {props.comments.map((comment, ind)=> {
                 return (<div key = {ind}>
-                    <strong><p>{comment.username}</p></strong>
-                    <p>{comment.text}</p>
+                    <strong><CommentP>{comment.username}</CommentP></strong>
+                    <CommentP>{comment.text}</CommentP>
                 </div>)
             })}
         </div>

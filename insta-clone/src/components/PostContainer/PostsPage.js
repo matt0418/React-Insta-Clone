@@ -2,7 +2,13 @@ import React from 'react'
 import dummyData from '/Users/matthewfeldman/Desktop/git/React-Insta-Clone/insta-clone/src/dummy-data'
 import PostContainer from './PostContainer'
 import SearchBar from '../SearchBar/SearchBar'
+import styled from 'styled-components'
 
+const StyleApp = styled.div`
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+`
 
 class PostsPage extends React.Component {
     constructor() {
@@ -49,7 +55,7 @@ class PostsPage extends React.Component {
 
     render() {
         return(
-            <div>
+            <StyleApp>
                 <SearchBar
                 searchInput = {this.state.searchInput}
                 handleChange = {this.handleChange}
@@ -59,7 +65,7 @@ class PostsPage extends React.Component {
                 <PostContainer 
                 postData = {this.state.postData}
                 />
-            </div>
+            </StyleApp>
         )
     }
 
