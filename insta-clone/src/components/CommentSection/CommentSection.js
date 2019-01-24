@@ -78,11 +78,10 @@ class CommentSection extends React.Component {
             comments,
             comment: ''
         })
-
     }
 
     increaseLike = () => {
-        if(this.state.likes === this.props.post.likes) {
+        if (this.state.likes === this.props.post.likes) {
             this.setState({
                 likes: this.props.post.likes++
             })
